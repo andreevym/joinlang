@@ -1,12 +1,35 @@
 apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+apply plugin: 'jetty'
 
-sourceCompatibility = 1.5
-version = '1.0'
+mainClassName='TeacherPanel'
 
+// tag:repositories[]
 repositories {
     mavenCentral()
 }
+// end:repositories[]
+
+// tag:jar[]
+jar {
+    baseName = 'JoinLang - education platform'
+    version = '0.0.1'
+}
+// end:jar[]
+
+// tag::dependencies[]
+// sourceCompatibility = 1.8
+// targetCompatibility = 1.8
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile "joda-time:joda-time:2.8.1"
 }
+// end::dependencies[]
+
+// tag::wrapper[]
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+// end::wrapper[]
