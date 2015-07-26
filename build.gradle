@@ -1,9 +1,35 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'application'
-apply plugin: 'jetty'
+//apply plugin: 'java'
+// https://docs.gradle.org/current/userguide/idea_plugin.html
+//apply plugin: 'idea'
+//apply plugin: 'application'
 
-mainClassName='TeacherPanel'
+//mainClassName='TeacherPanel'
+//sourceCompatibility = 1.5
+//version = '1.0'
+
+// http://rominirani.com/2014/08/12/gradle-tutorial-part-4-java-web-applications/
+allprojects {
+    task hello << { task -> println "I'm $task.project.name" }
+}
+subprojects {
+    apply plugin : "java"
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+task compileTask << {
+    System.out.println "compiling..."
+}
+
+task buildTask << {
+    System.out.println "building..."
+}
+
+/*
+
+// targetCompatibility = 1.8
 
 // tag:repositories[]
 repositories {
@@ -14,13 +40,15 @@ repositories {
 // tag:jar[]
 jar {
     baseName = 'JoinLang - education platform'
-    version = '0.0.1'
+    version = version
+    manifest {
+        attributes 'Implementation-Title': 'JoinLang - education platform',
+                'Implementation-Version': version
+    }
 }
 // end:jar[]
 
 // tag::dependencies[]
-// sourceCompatibility = 1.8
-// targetCompatibility = 1.8
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
@@ -33,3 +61,24 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
 }
 // end::wrapper[]
+
+test {
+    systemProperties 'property': 'value'
+}
+
+// https://docs.gradle.org/current/userguide/tutorial_java_projects.html
+// Example 7.7. Publishing the JAR file
+uploadArchives {
+    repositories {
+        flatDir {
+            dirs 'repos'
+        }
+    }
+}
+
+
+idea.module.iml {
+    beforeMerged { module ->
+        module.dependencies.clear()
+    }
+}*/

@@ -1,2 +1,2 @@
-rootProject.name = 'JoinLang - education platform'
-
+rootProject.name = 'JoinLang'
+include ":utils",":web"

@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JoinLang.iml" filepath="$PROJECT_DIR$/JoinLang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JoinLang.iml" filepath="$PROJECT_DIR$/JoinLang.iml" />
       <module fileurl="file://$PROJECT_DIR$/JoinLang - education platform.iml" filepath="$PROJECT_DIR$/JoinLang - education platform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/utils/utils.iml" filepath="$PROJECT_DIR$/utils/utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
     </modules>
   </component>
 </project>
