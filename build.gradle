@@ -11,11 +11,12 @@
 allprojects {
     task hello << { task -> println "I'm $task.project.name" }
 }
+
 subprojects {
     apply plugin : "java"
 
     repositories {
-        mavenCentral()
+        jcenter()
     }
 }
 
